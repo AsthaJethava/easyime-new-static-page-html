@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USCIS Doctors in Austin, TX | Verified Immigration Medical Exams</title>
+
+    <meta name="description"
+        content="Looking for USCIS doctors in Austin? Get your immigration medical exam done by USCIS-approved physicians with Form I-693 support and compliant documentation." />
+
+    <style>
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* ================= GLOBAL ================= */
+        .ei-wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .ei-section {
+            padding: 30px 0;
+            /* reduced desktop gap */
+        }
+
+        .ei-title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .ei-muted {
+            font-size: 18px;
+            font-weight: 500;
+            color: #475569;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        /* ================= HERO ================= */
+        #ei-hero {
+            position: relative;
+            background:
+                linear-gradient(120deg, rgba(7, 89, 133, 0.85), rgba(15, 118, 110, 0.85)),
+                url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 40px 20px;
+            padding-top: 28px;
+            text-align: center;
+        }
+
+        #ei-hero h1 {
+            font-size: 42px;
+            margin-bottom: 14px;
+        }
+
+        #ei-hero p {
+            font-size: 18px;
+            max-width: 900px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        /* ================= TRUST SNAPSHOT ================= */
+        .ei-trust-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .ei-trust-item {
+            position: relative;
+            /* background: linear-gradient(180deg, #ecfeff, #f0fdfa); */
+            background: #cee1e0;
+            border-radius: 16px;
+            padding: 20px 18px 24px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+        }
+
+        /* decorative corner */
+        .ei-trust-item::after {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 110px;
+            height: 110px;
+            background: rgba(15, 118, 110, 0.12);
+            border-radius: 50%;
+        }
+
+        /* ================= WHY EASYIME ================= */
+        .ei-why-panel {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 35px;
+            /* background: #dcb5b57d; */
+            font-weight: 500;
+            /* text-align: center; */
+            border-radius: 18px;
+            /* padding: 35px; */
+            /* margin-top: 35px; */
+            /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07); */
+        }
+
+        /* ================= RATING ================= */
+        .ei-rating {
+            max-width: 720px;
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 26px 30px;
+
+            /* CLEAN, PROFESSIONAL */
+            background: #cee1e0;
+            border: 1px solid rgba(15, 118, 110, 0.25);
+            border-radius: 999px;
+        }
+
+        .ei-rating-stars {
+            min-width: 150px;
+            text-align: center;
+            padding-right: 20px;
+            border-right: 1px solid rgba(15, 118, 110, 0.25);
+        }
+
+        .ei-rating-stars span {
+            font-size: 24px;
+            color: #f59e0b;
+            /* stars stay gold */
+            display: block;
+        }
+
+        .ei-rating-stars strong {
+            color: #0f766e;
+            font-weight: 700;
+        }
+
+        .ei-rating p {
+            color: #334155;
+            font-size: 16px;
+        }
+
+        /* ================= BENEFITS ================= */
+        .ei-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .ei-benefit {
+            background: #ffffff;
+            border-left: 5px solid #0ea5a4;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Mobile breathing space */
+
+        /* ================= SUBURBS ================= */
+        .ei-suburbs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .ei-suburb {
+            cursor: pointer;
+            background: #dcb5b5;
+            padding: 15px 40px;
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ================= PROCESS ================= */
+        .ei-process-timeline {
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+            /* padding-left: 40px; */
+        }
+
+        .ei-process-timeline::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #0ea5a4, #6366f1);
+            border-radius: 2px;
+        }
+
+        .ei-process-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 28px;
+            position: relative;
+            align-items: center;
+        }
+
+        .ei-process-circle {
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #0ea5a4;
+            color: #ffffff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .ei-process-content {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .ei-process-content-title {
+            font-weight: 600;
+            color: #0c9b9a;
+        }
+
+        /* ================= FAQ ================= */
+        .ei-faq {
+            max-width: 850px;
+            margin: 35px auto 0;
+        }
+
+        .ei-faq-item {
+            background: #ffffff;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .ei-faq-question {
+            padding: 18px 22px;
+            cursor: pointer;
+            font-weight: 600;
+            background: #d9bb9b;
+        }
+
+        .ei-faq-answer {
+            display: none;
+            padding: 18px 22px;
+            background: #d9bb9b66;
+            color: #475569;
+        }
+
+        .ei-faq-item.active .ei-faq-answer {
+            display: block;
+        }
+
+        .ei-para-main {
+            padding-bottom: 0;
+        }
+
+        .ei-trust-item-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #075985;
+        }
+
+        .ei-trust-item-title i {
+            background: #0f766e;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        .ei-why-panel-item {
+            padding-bottom: 10px;
+            background: #e0cfcf87;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .ei-why-panel-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+
+        .ei-why-panel-itemtitle {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #075985;
+        }
+
+        .ei-why-panel-item i {
+            color: #075985;
+            margin-right: 8px;
+        }
+
+        .ei-benefit-title {
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+
+        /* .brief-info-title {
+            font-weight: bold;
+            font-size: 24px;
+            padding-bottom: 15px;
+        } */
+        .brief-info-wrap {
+            padding-bottom: 0;
+        }
+
+        .brief-info-para {
+            padding-bottom: 10px;
+            margin: 24px auto;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: #334155;
+            align-items: center;
+            max-width: 900px;
+        }
+
+        .brief-info-para i {
+            color: #0f766e;
+            font-size: 22px;
+
+        }
+
+        .understanding-doctor-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .testimonials-para {
+            text-align: center;
+            color: #0f766e;
+            font-weight: 500;
+        }
+
+        .testimonials {
+            padding-top: 0;
+        }
+
+        .ei-title-editorial {
+            max-width: 900px;
+            margin: 28px auto;
+            margin-bottom: 0;
+        }
+
+        .ei-title-editorial h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #986740;
+        }
+
+        .ei-editorial-line {
+            display: block;
+            width: 20%;
+            height: 5px;
+            background: #e0cfcf87;
+            margin: 10px 0 14px;
+            border-radius: 2px;
+        }
+
+        .ei-title-editorial p {
+            color: #334155;
+        }
+
+        .ei-para-shadow {
+            max-width: 1000px;
+            margin: 10px auto;
+            padding: 18px 22px;
+            background: transparent;
+            box-shadow: inset 0 -1px 0 rgba(15, 118, 110, 0.25);
+            color: #1e293b;
+        }
+
+        .ei-hero-points {
+            margin-top: 26px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px 28px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .ei-hero-points span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            backdrop-filter: blur(4px);
+        }
+
+        .ei-hero-points i {
+            color: #22c55e;
+            /* clean green check */
+        }
+
+        /* star highlight */
+        .ei-hero-star i {
+            color: #fbbf24;
+        }
+
+        .nearby-subrubs {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        @media (max-width:1100px) {
+            .ei-section {
+                padding: 20px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .ei-why-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .ei-section {
+                padding: 40px 15px;
+                padding-bottom: 5px;
+            }
+
+            .ei-title {
+                font-size: 30px;
+            }
+
+            #ei-hero h1 {
+                font-size: 30px;
+            }
+
+            .ei-why-panel p {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ei-hero-points {
+                font-size: 14px;
+                gap: 12px;
+            }
+
+            .ei-trust-item {
+                text-align: center;
+            }
+
+            .ei-suburb {
+                padding: 15px 75px;
+            }
+
+            .ei-title {
+                font-size: 22px;
+            }
+
+            .ei-process-step {
+                gap: 5px;
+            }
+
+            .ei-benefit,
+            .ei-trust-item {
+                margin: 0 8px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section id="ei-hero">
+        <h1>USCIS Doctors in Austin, TX</h1>
+        <p>Trusted Immigration Medical Exams by USCIS-Approved Doctors</p>
+        <p>Locate reliable USCIS doctors in Austin for your immigration medical exam, vaccination review, and Form I-693
+            support. </p>
+        <div class="ei-hero-points">
+            <span><i class="fa-solid fa-check-circle"></i> Verified USCIS Doctors</span>
+            <span><i class="fa-solid fa-check-circle"></i> USCIS-Compliant Medical Exams</span>
+            <span><i class="fa-solid fa-check-circle"></i> Secure & Trusted Platform</span>
+            <span class="ei-hero-star">
+                <i class="fa-solid fa-star"></i> Trusted by Austin Applicants
+            </span>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="ei-section ei-wrap ei-para-main">
+        <h2 class="ei-title">USCIS Doctors in Austin, TX – Immigration Medical Exams for a Growing City
+        </h2>
+        <p class="ei-muted ei-para-shadow">
+            Austin is a rapidly growing city with a strong international workforce, university population,
+            and expanding immigrant community. EasyIME supports applicants across Austin by helping them
+            locate trusted USCIS doctors and complete immigration medical exams with clarity.
+        </p>
+        <p class="ei-muted ei-para-shadow">
+            USCIS-approved civil surgeons in Austin commonly assist applicants who are transitioning from work visas,
+            student visas, and family-sponsored categories. Because many applicants are new to the process, finding a
+            USCIS doctor who provides clear exam guidance, proper vaccination assessment, and accurate Form I-693
+            documentation is critical.
+        </p>
+        <p class="ei-muted ei-para-shadow">
+            EasyIME supports applicants across Austin and nearby areas by helping them locate trusted USCIS doctors who
+            serve the greater Austin region, making the immigration medical exam process clearer, more organized, and
+            easier to complete.
+        </p>
+    </section>
+
+    <!-- TRUST SNAPSHOT -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">Trust Snapshot – Why Austin Applicants Choose EasyIME</h2>
+
+        <div class="ei-trust-strip">
+            <div class="ei-trust-item">
+                <p class="ei-trust-item-title">
+                    <i class="fa-solid fa-compass"></i>
+                    Guidance-Focused Medical Support
+                </p>
+                <p>
+                    Many Austin applicants are completing their first immigration medical exam. USCIS doctors in Austin
+                    emphasize clear explanations, preparation, and step-by-step support.
+                </p>
+            </div>
+            <div class="ei-trust-item">
+                <p class="ei-trust-item-title">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Serving a Growing International Population
+                </p>
+                Austin’s expanding professional and student community relies on USCIS-approved civil surgeons in Austin
+                who understand frequent visa-to-green-card transitions.
+            </div>
+            <div class="ei-trust-item">
+                <p class="ei-trust-item-title"><i class="fab fa-wpforms"></i>
+                    Form I-693 Accuracy Assurance
+                </p>
+                USCIS doctors in Austin focus on compliant medical exams and accurate Form I-693 handling to reduce
+                rework and processing delays.
+            </div>
+            <div class="ei-trust-item">
+                <p class="ei-trust-item-title"><i class="fa-solid fa-lock"></i>
+                    Secure & Transparent Platform
+                </p>
+                EasyIME delivers a secure, trusted, and reliable environment to find USCIS doctors in Austin.
+            </div>
+            <div class="ei-trust-item">
+                <p class="ei-trust-item-title"><i class="fa-solid fa-hand-holding-hand"></i>
+                    Trusted in a Rapidly Growing City
+                </p>
+                As Austin’s immigrant population grows, applicants increasingly rely on EasyIME for dependable green
+                card medical exam access.
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY EASYIME -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">Why Choose EasyIME</h2>
+
+        <div class="ei-why-panel">
+            <div class="ei-why-panel-item">
+                <p class="ei-why-panel-itemtitle">Title</p>
+                <p>
+                    <i class="fa-solid fa-hand-point-right"></i> EasyIME helps immigrants in Austin, Texas find trusted
+                    USCIS doctors in Austin for immigration medical exams and green card medical exam needs in a
+                    fast-growing and highly mobile city.
+                </p>
+            </div>
+            <div class="ei-why-panel-item">
+                <p class="ei-why-panel-itemtitle">Verified USCIS doctors in Austin </p>
+                <p>
+                    <i class="fa-solid fa-hand-point-right"></i>Austin attracts international professionals, students,
+                    and relocating families. EasyIME connects
+                    applicants with USCIS-approved doctors in Austin and authorized immigration doctors, ensuring access
+                    to
+                    a verified USCIS doctor near their location.
+                </p>
+            </div>
+            <div class="ei-why-panel-item">
+                <p class="ei-why-panel-itemtitle">Immigration medical exam support</p>
+                <p>
+                    <i class="fa-solid fa-hand-point-right"></i>Many Austin applicants are completing their first
+                    immigration medical exam. EasyIME simplifies visits to an immigration medical exam doctor and
+                    supports clear immigration doctor appointment preparation.
+                </p>
+            </div>
+            <div class="ei-why-panel-item">
+                <p class="ei-why-panel-itemtitle">Form I-693 accuracy focus</p>
+                <p>
+                    <i class="fa-solid fa-hand-point-right"></i>With frequent transitions from student and work visas,
+                    accurate Form I-693 completion is essential. EasyIME highlights USCIS doctors in Austin who follow
+                    proper documentation steps for every green card medical exam.
+                </p>
+            </div>
+            <div class="ei-why-panel-item">
+                <p class="ei-why-panel-itemtitle">USCIS-compliant and transparent process </p>
+                <p>
+                    <i class="fa-solid fa-hand-point-right"></i>EasyIME is built on USCIS medical requirements and
+                    supports Austin applicants by providing a clear way to locate USCIS-approved doctors, complete the
+                    immigration medical exam, and submit correct documentation.
+                </p>
+            </div>
+        </div>
+
+        <div class="ei-rating">
+            <div class="ei-rating-stars">
+                <span>★★★★☆</span>
+                <strong>4.5 / 5</strong>
+            </div>
+            <p>
+                Trusted by immigrants across Austin, Texas, EasyIME connects applicants with verified USCIS doctors who
+                meet federal medical exam standards.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- SEARCH
+    <section id="ei-search">
+        <div class="ei-search-box">Search Bar + Doctor Listing Area</div>
+    </section> -->
+
+    <!-- BENEFITS -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">Service Benefits – USCIS Doctors in Austin, TX</h2>
+
+        <div class="ei-benefits">
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    First-Time Applicant Friendly
+                </p>
+                <p>Built for individuals completing their first immigration medical exam, with clear expectations and
+                    preparation guidance.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Austin & Tech-Corridor Coverage
+                </p>
+                <p>Find USCIS doctors in Austin serving Round Rock, Pflugerville, Cedar Park, and surrounding
+                    professional and university hubs.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Appointment Preparation Support
+                </p>
+                <p>Know what documents, tests, and vaccinations are needed before visiting a USCIS-approved doctor in
+                    Austin.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Verified USCIS Civil Surgeons
+                </p>
+                <p>Only USCIS-approved civil surgeons in Austin are listed to prevent unauthorized bookings.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Form I-693 Accuracy Emphasis
+                </p>
+                <p>Strong focus on correct completion and sealing of Form I-693 during the green card medical exam.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Secure & Trusted Experience
+                </p>
+                <p>A secure and transparent platform to connect with USCIS doctors in Austin.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Designed for Professionals & Students
+                </p>
+                <p>Supports busy international professionals and students navigating status transitions.</p>
+            </div>
+            <div class="ei-benefit">
+                <p class="ei-benefit-title">
+                    Clear Process, Less Stress
+                </p>
+                <p>A simplified way to locate USCIS doctors in Austin and complete the immigration medical exam with
+                    confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBURBS -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">Nearby Suburbs Around Austin, TX</h2>
+        <p class="nearby-subrubs">Austin serves as a central medical and employment hub for many fast-growing
+            surrounding cities. Applicants
+            from nearby communities often rely on Austin to access USCIS doctors for immigration medical exams,
+            especially when transitioning from work or student visa categories. </p><br />
+        <p class="nearby-subrubs">EasyIME supports applicants across the greater Austin region by helping them locate
+            USCIS-approved doctors in
+            Austin and nearby areas, making it easier to plan appointments without long or confusing searches. </p>
+        <div class="ei-suburbs">
+            <div class="ei-suburb">Round Rock</div>
+            <div class="ei-suburb">Cedar Park</div>
+            <div class="ei-suburb">Pflugerville</div>
+            <div class="ei-suburb">Georgetown</div>
+            <div class="ei-suburb">Leander</div>
+            <div class="ei-suburb">Buda</div>
+        </div><br />
+        <p class="nearby-subrubs">Applicants from these cities can use EasyIME to find trusted USCIS doctors in Austin
+            and complete their
+            immigration medical exam in a well-connected regional center.</p>
+    </section>
+    <section class="ei-section ei-wrap brief-info-wrap">
+        <div class="brief-info">
+            <p class="ei-title">
+                Brief Information About USCIS Doctors in Austin, TX
+            </p>
+            <p class="brief-info-para">
+                <i class="fa-solid fa-circle-info"></i>
+                Austin’s immigrant population continues to grow, driven by international professionals, students, and
+                relocating families. USCIS doctors in Austin frequently assist applicants who are adjusting status from
+                work visas, student visas, and family-sponsored immigration categories.
+            </p>
+            <p class="brief-info-para">
+                <i class="fa-solid fa-circle-info"></i>
+                USCIS-approved civil surgeons in Austin often focus on guiding applicants who may be completing their
+                first immigration medical exam. This includes helping applicants understand vaccination requirements,
+                preparing for medical testing, and ensuring Form I-693 is completed accurately according to USCIS
+                standards.
+            </p>
+            <p class="brief-info-para">
+                <i class="fa-solid fa-circle-info"></i>
+                Selecting the right USCIS doctor in Austin supports a smoother immigration
+                medical exam experience,
+                helping applicants move forward with their green card medical exam and adjustment application with
+                greater confidence and fewer documentation issues.
+            </p>
+        </div>
+    </section>
+
+    <section class="ei-section ei-wrap">
+        <p class="ei-title">
+            Understanding USCIS Doctors in Austin, TX
+        </p>
+        <div class="ei-title-editorial">
+            <h4>Support for a growing applicant base</h4>
+            <span class="ei-editorial-line"></span>
+            <p>With Austin’s expanding international workforce and student population, USCIS-approved civil surgeons in
+                Austin assist applicants across work, student, and family-based immigration categories.
+            </p>
+        </div>
+        <div class="ei-title-editorial">
+            <h4>Medical exam responsibilities</h4>
+            <span class="ei-editorial-line"></span>
+            <p>During an immigration medical exam, USCIS doctors in Austin review vaccination records, perform required
+                health screenings, and ensure all USCIS medical requirements are met.
+            </p>
+        </div>
+        <div class="ei-title-editorial">
+            <h4>Form I-693 handling</h4>
+            <span class="ei-editorial-line"></span>
+            <p>After the exam, USCIS-approved doctors in Austin accurately complete and seal Form I-693, a critical part
+                of the green card medical exam process.
+            </p>
+        </div>
+        <div class="ei-title-editorial">
+            <h4>Why choosing the right doctor matters</h4>
+            <span class="ei-editorial-line"></span>
+            <p>Selecting a reliable USCIS doctor in Austin helps reduce documentation errors, repeat visits, and
+                application delays.
+            </p>
+        </div>
+
+    </section>
+    <!-- PROCESS -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">USCIS Doctor Visit Process in Austin, TX</h2>
+
+        <div class="ei-process-timeline">
+            <div class="ei-process-step">
+                <div class="ei-process-circle">1</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Scheduling and preparation
+                    </p>
+                    <p>Applicants visiting USCIS doctors in Austin often schedule appointments in advance and prepare
+                        vaccination records and documents needed for the immigration medical exam.</p>
+                </div>
+            </div>
+
+            <div class="ei-process-step">
+                <div class="ei-process-circle">2</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Initial verification
+                    </p>
+                    <p>At the visit, USCIS-approved doctors in Austin confirm identity and review paperwork to ensure
+                        eligibility for the green card medical exam. </p>
+                </div>
+            </div>
+
+            <div class="ei-process-step">
+                <div class="ei-process-circle">3</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Medical evaluation
+                    </p>
+                    <p>During the immigration medical exam, USCIS doctors in Austin perform required physical
+                        examinations and assess general health history.
+                    </p>
+                </div>
+            </div>
+
+            <div class="ei-process-step">
+                <div class="ei-process-circle">4</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Vaccination and required testing
+                    </p>
+                    <p>USCIS-approved civil surgeons in Austin review vaccination records and conduct required
+                        screenings, including TB testing, according to USCIS guidelines.
+                    </p>
+                </div>
+            </div>
+
+            <div class="ei-process-step">
+                <div class="ei-process-circle">5</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Form I-693 documentation
+                    </p>
+                    <p>Once the exam is complete, USCIS doctors in Austin finalize and seal Form I-693 to ensure
+                        USCIS-compliant submission.
+                    </p>
+                </div>
+            </div>
+
+            <div class="ei-process-step">
+                <div class="ei-process-circle">6</div>
+                <div class="ei-process-content">
+                    <p class="ei-process-content-title">
+                        Completion and next step
+                    </p>
+                    <p>Applicants receive guidance from their USCIS doctor in Austin on safely handling medical
+                        documents and preparing for the next stage of their application.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ei-section ei-wrap testimonials">
+        <div>
+            <p class="ei-title">Testimonials </p>
+            <p class="testimonials-para">Applicants across Austin, Texas rely on EasyIME to find trusted USCIS doctors
+                and complete their
+                immigration medical exams with confidence and clarity. </p>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="ei-section ei-wrap">
+        <h2 class="ei-title">USCIS Doctors – Important Information & Guidance</h2>
+
+        <div class="ei-faq">
+            <div class="ei-faq-item">
+                <div class="ei-faq-question">What is a USCIS medical exam?</div>
+                <div class="ei-faq-answer">
+                    A USCIS medical exam evaluates health, vaccination records, and eligibility
+                    for immigration benefits using Form I-693.
+                </div>
+            </div>
+
+            <div class="ei-faq-item">
+                <div class="ei-faq-question">Who can perform Form I-693 exams?</div>
+                <div class="ei-faq-answer">
+                    Only USCIS-approved civil surgeons are authorized to complete and seal Form I-693.
+                </div>
+            </div>
+
+            <div class="ei-faq-item">
+                <div class="ei-faq-question">How long is the medical exam valid?</div>
+                <div class="ei-faq-answer">
+                    USCIS medical exams are generally valid for up to two years when properly submitted.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.ei-faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
