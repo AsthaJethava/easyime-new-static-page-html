@@ -177,10 +177,8 @@ body {
 
 .ei-trust-item {
   position: relative;
-  /* background: linear-gradient(180deg, #ecfeff, #f0fdfa); */
   background: #cee1e0;
   border-radius: 16px;
-  /* padding: 20px 18px 24px; */
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
   overflow: hidden;
 }
@@ -203,13 +201,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 35px;
-  /* background: #dcb5b57d; */
   font-weight: 500;
-  /* text-align: center; */
   border-radius: 18px;
-  /* padding: 35px; */
-  /* margin-top: 35px; */
-  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07); */
 }
 
 /* ================= RATING ================= */
@@ -432,12 +425,6 @@ body {
   padding-bottom: 10px;
   min-height: 62px;
 }
-
-/* .brief-info-title {
-            font-weight: bold;
-            font-size: 24px;
-            padding-bottom: 15px;
-        } */
 .brief-info-wrap {
   padding-bottom: 0;
 }
@@ -583,7 +570,13 @@ body {
   margin: 0 auto;
   padding-top: 20px;
 }
-
+.ei-search-box-mobile-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
 /* SEARCH BAR */
 .ei-search-box {
   display: flex;
@@ -789,8 +782,6 @@ body {
 
 /* ===== ALL INCLUSIVE ===== */
 .imep-inclusive {
-  /* background: linear-gradient(160deg, #0f766e, #0b4f4a); */
-  /* color: white; */
   position: relative;
   border-left: 0.25px solid #e0cfcf87;
 }
@@ -808,7 +799,6 @@ body {
 }
 
 .imep-inclusive h4 {
-  /* margin-top: 30px; */
   margin-bottom: 6px;
 }
 
@@ -954,6 +944,18 @@ body {
   font-weight: 700;
   color: #111827;
 }
+/* ================= MOBILE SHEET BACKDROP ================= */
+.ei-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 30;
+  display: none;
+}
+
+.ei-sheet-backdrop.active {
+  display: block;
+}
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1100px) {
@@ -1024,6 +1026,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .ei-search-box {
+    align-items: stretch;
+  }
+
   .ei-sheet-search input {
     border: none;
   }
@@ -1163,4 +1169,9 @@ body {
   .ime-footer-main {
     grid-template-columns: 1fr;
   }
+}
+/* ================= MOBILE SCROLL LOCK ================= */
+body.ei-no-scroll {
+  overflow: hidden;
+  touch-action: none;
 }

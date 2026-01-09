@@ -355,14 +355,14 @@
                     proper documentation steps for every green card medical exam.
                 </p>
             </div>
-            <div class="ei-why-panel-item">
+            <!-- <div class="ei-why-panel-item">
                 <p class="ei-why-panel-itemtitle">USCIS-compliant and transparent process </p>
                 <p>
                     EasyIME is built on USCIS medical requirements and
                     supports Austin applicants by providing a clear way to locate USCIS-approved doctors, complete the
                     immigration medical exam, and submit correct documentation.
                 </p>
-            </div>
+            </div> -->
         </div>
 
         <div class="ei-rating">
@@ -761,6 +761,7 @@
         </div>
 
     </footer>
+    <div class="ei-sheet-backdrop" id="eiSheetBackdrop"></div>
 
     <script>
         document.querySelectorAll('.ei-faq-question').forEach(q => {
@@ -780,6 +781,12 @@
         const sheet = document.getElementById("eiMobileSheet");
         const closeSheet = document.getElementById("eiCloseSheet");
         const searchSection = document.getElementById("eiSearchSection");
+        const backdrop = document.getElementById("eiSheetBackdrop");
+        function closeMobileSheet() {
+            sheet.classList.remove("active");
+            backdrop.classList.remove("active");
+            document.body.classList.remove("ei-no-scroll");
+        }
 
         /* -----------------------------
            OPEN SEARCH
@@ -787,6 +794,8 @@
         input.addEventListener("click", () => {
             if (window.innerWidth <= 768) {
                 sheet.classList.add("active");
+                backdrop.classList.add("active");
+                document.body.classList.add("ei-no-scroll");
             } else {
                 dropdown.classList.add("active");
             }
@@ -802,16 +811,15 @@
                 input.value = value;
 
                 dropdown.classList.remove("active");
-                sheet.classList.remove("active");
+                // sheet.classList.remove("active");
+                closeMobileSheet();
             });
         });
 
         /* -----------------------------
            CLOSE MOBILE SHEET
         ----------------------------- */
-        closeSheet?.addEventListener("click", () => {
-            sheet.classList.remove("active");
-        });
+        closeSheet?.addEventListener("click", closeMobileSheet);
 
         /* -----------------------------
            SCROLL BEHAVIOR (DESKTOP ONLY)
@@ -837,6 +845,20 @@
         window.addEventListener("resize", () => {
             searchOffsetTop = searchSection.offsetTop;
         });
+        /* --------- CLOSE DROPDOWN ON OUTSIDE CLICK (DESKTOP ONLY) ----------- */
+        document.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) return; // desktop only
+
+            const isClickInsideSearch =
+                e.target.closest(".ei-search-box") ||
+                e.target.closest(".ei-search-dropdown");
+
+            if (!isClickInsideSearch) {
+                dropdown.classList.remove("active");
+            }
+        });
+        backdrop.addEventListener("click", closeMobileSheet);
+
     </script>
 
 </body>
