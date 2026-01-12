@@ -183,6 +183,7 @@
   max-width: 900px;
   margin: 40px auto 0;
   position: relative;
+  /* flex: 0 0 55%; */
   /* padding-left: 40px; */
 }
 
@@ -191,7 +192,8 @@
   position: absolute;
   left: 18px;
   top: 0;
-  bottom: 0;
+  /* bottom: 0; */
+  bottom: 16px;
   width: 3px;
   background: #87734e;
   border-radius: 2px;
@@ -287,6 +289,22 @@
 /* Hover effect */
 .blog-item:hover .blog-title {
   color: #ab0101;
+}
+.bannerimg {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+}
+.banner-process-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.bannerimg img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
 }
 @media (max-width: 768px) {
   .ei-i693-eligibility-grid {

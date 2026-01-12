@@ -8,7 +8,7 @@
     <meta title="I‑693 Medical Exam | USCIS Approved Doctors & easyIME " />
     <meta name="description"
         content="easyIME helps book your I‑693 medical exam with a USCIS certified surgeon. Secure process, online appointment, affordable cost, sealed envelope." />
-
+    <link rel="icon" type="image/x-icon" href="/easyime_Images/favicon-96x96.png">
     <link rel="stylesheet" href="./common.css?v=1.0" />
     <link rel="stylesheet" href="./i693-page.css?v=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -21,7 +21,7 @@
 
             <!-- LOGO -->
             <div class="ei-header-logo">
-                <img src="./Logo.svg" alt="EasyIME Logo" />
+                <img src="./easyime_Images/Logo.svg" alt="EasyIME Logo" />
 
             </div>
 
@@ -102,7 +102,14 @@
                 <div class="ei-search-box-mobile-div">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Enter your zip code or city" readonly id="eiSearchInput" />
+                    <span class="ei-clear-input" id="eiClearSearch" title="Clear">
+                        ✕
+                    </span>
                 </div>
+                <button type="button" class="ei-use-location" id="eiUseLocationBtn">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Use My Location
+                </button>
                 <button class="ei-search-btn">Find USCIS Doctor Near Me</button>
             </div>
 
@@ -157,7 +164,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -222,7 +229,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -287,7 +294,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -352,7 +359,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -474,44 +481,50 @@
     <!-- PROCESS -->
     <section class="ei-section ei-wrap">
         <h2 class="ei-title">I‑693 Medical Exam Process</h2>
+        <div class="banner-process-section">
 
-        <div class="ei-process-timeline">
-            <div class="ei-process-step">
-                <div class="ei-process-circle">1</div>
-                <div class="ei-process-content">
-                    <p class="ei-process-content-title">
-                        Search and book an appointment through easyIME
-                    </p>
+            <div class="ei-process-timeline">
+                <div class="ei-process-step">
+                    <div class="ei-process-circle">1</div>
+                    <div class="ei-process-content">
+                        <p class="ei-process-content-title">
+                            Search and book an appointment through easyIME
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ei-process-step">
+                    <div class="ei-process-circle">2</div>
+                    <div class="ei-process-content">
+                        <p class="ei-process-content-title">
+                            Visit the clinic for your immigration medical exam
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ei-process-step">
+                    <div class="ei-process-circle">3</div>
+                    <div class="ei-process-content">
+                        <p class="ei-process-content-title">
+                            Complete required tests and vaccination review
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ei-process-step">
+                    <div class="ei-process-circle">4</div>
+                    <div class="ei-process-content">
+                        <p class="ei-process-content-title">
+                            Receive the completed I‑693 form in a sealed envelope
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="ei-process-step">
-                <div class="ei-process-circle">2</div>
-                <div class="ei-process-content">
-                    <p class="ei-process-content-title">
-                        Visit the clinic for your immigration medical exam
-                    </p>
-                </div>
-            </div>
-
-            <div class="ei-process-step">
-                <div class="ei-process-circle">3</div>
-                <div class="ei-process-content">
-                    <p class="ei-process-content-title">
-                        Complete required tests and vaccination review
-                    </p>
-                </div>
-            </div>
-
-            <div class="ei-process-step">
-                <div class="ei-process-circle">4</div>
-                <div class="ei-process-content">
-                    <p class="ei-process-content-title">
-                        Receive the completed I‑693 form in a sealed envelope
-                    </p>
-                </div>
+            <div class="bannerimg">
+                <img src="./easyime_Images/medical_exam_process_banner.png" />
             </div>
         </div>
+
     </section>
 
     <section class="ei693-docs-editorial">
@@ -669,7 +682,7 @@
             <a href="https://www.easyime.com/blog/instructions-for-the-uscis-i693-form/" target="_blank"
                 class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/2.jpg" alt="I-693 Instructions">
+                    <img src="./easyime_Images/Instructions_for_the_USCIS_I-693 Form.jpg" alt="I-693 Instructions">
                 </div>
                 <h3 class="blog-title">
                     Instructions for the USCIS I-693 Form
@@ -679,7 +692,7 @@
             <a href="https://www.easyime.com/blog/what-is-the-medical-exam-for-a-green-card/" target="_blank"
                 class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/3.webp" alt="Medical Exam">
+                    <img src="./easyime_Images/Medical_Exam_for_a_Green_Card.webp" alt="Medical Exam">
                 </div>
                 <h3 class="blog-title">
                     What Is the Medical Exam for a Green Card?
@@ -689,7 +702,7 @@
             <a href="https://www.easyime.com/blog/what-immigration-applicants-should-know-about-the-i-693-form/"
                 target="_blank" class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/2.jpg" alt="Immigration Guide">
+                    <img src="./easyime_Images/Instructions_for_the_USCIS_I-693 Form.jpg" alt="Immigration Guide">
                 </div>
                 <h3 class="blog-title">
                     What Immigration Applicants Should Know About the I-693 Form
@@ -758,7 +771,7 @@
 
         <!-- TRUST / PAYMENTS -->
         <div class="ime-footer-trust">
-            <img src="./advertise.png" alt="image" />
+            <img src="./easyime_Images/advertise.png" alt="image" />
         </div>
 
         <!-- COPYRIGHT -->
@@ -786,6 +799,7 @@
         const closeSheet = document.getElementById("eiCloseSheet");
         const searchSection = document.getElementById("eiSearchSection");
         const backdrop = document.getElementById("eiSheetBackdrop");
+        const clearBtn = document.getElementById("eiClearSearch");
         function closeMobileSheet() {
             sheet.classList.remove("active");
             backdrop.classList.remove("active");
@@ -812,7 +826,7 @@
                 const value = item.querySelector("strong")?.innerText || item.innerText;
 
                 input.value = value;
-
+                clearBtn.style.display = "block"; // ✅ SHOW ✕
                 dropdown.classList.remove("active");
                 // sheet.classList.remove("active");
                 closeMobileSheet();
@@ -861,6 +875,12 @@
             }
         });
         backdrop.addEventListener("click", closeMobileSheet);
+        clearBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevent dropdown opening
+
+            input.value = "";
+            clearBtn.style.display = "none";
+        });
 
     </script>
 </body>

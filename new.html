@@ -8,7 +8,7 @@
     <meta title="USCIS Doctors in Austin, TX | Verified Immigration Medical Exams " />
     <meta name="description"
         content="Looking for USCIS doctors in Austin? Get your immigration medical exam done by USCIS-approved physicians with Form I-693 support and compliant documentation." />
-
+    <link rel="icon" type="image/x-icon" href="/easyime_Images/favicon-96x96.png">
     <link rel="stylesheet" href="./new.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
@@ -20,7 +20,7 @@
 
             <!-- LOGO -->
             <div class="ei-header-logo">
-                <img src="./Logo.svg" alt="EasyIME Logo" />
+                <img src="./easyime_Images/Logo.svg" alt="EasyIME Logo" />
 
             </div>
 
@@ -103,7 +103,14 @@
                 <div class="ei-search-box-mobile-div">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Enter your zip code or city" readonly id="eiSearchInput" />
+                    <span class="ei-clear-input" id="eiClearSearch" title="Clear">
+                        ✕
+                    </span>
                 </div>
+                <button type="button" class="ei-use-location" id="eiUseLocationBtn">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Use My Location
+                </button>
                 <button class="ei-search-btn">Find USCIS Doctor Near Me</button>
             </div>
 
@@ -158,7 +165,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -222,7 +229,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -286,7 +293,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -350,7 +357,7 @@
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -943,7 +950,7 @@
 
         <!-- TRUST / PAYMENTS -->
         <div class="ime-footer-trust">
-            <img src="./advertise.png" alt="image" />
+            <img src="./easyime_Images/advertise.png" alt="image" />
         </div>
 
         <!-- COPYRIGHT -->
@@ -973,6 +980,7 @@
         const closeSheet = document.getElementById("eiCloseSheet");
         const searchSection = document.getElementById("eiSearchSection");
         const backdrop = document.getElementById("eiSheetBackdrop");
+        const clearBtn = document.getElementById("eiClearSearch");
         function closeMobileSheet() {
             sheet.classList.remove("active");
             backdrop.classList.remove("active");
@@ -1000,7 +1008,7 @@
                 const value = item.querySelector("strong")?.innerText || item.innerText;
 
                 input.value = value;
-
+                clearBtn.style.display = "block"; // ✅ SHOW ✕
                 dropdown.classList.remove("active");
                 // sheet.classList.remove("active");
                 closeMobileSheet();
@@ -1049,7 +1057,12 @@
             }
         });
         backdrop.addEventListener("click", closeMobileSheet);
+        clearBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevent dropdown opening
 
+            input.value = "";
+            clearBtn.style.display = "none";
+        });
     </script>
 
 </body>
