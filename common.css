@@ -59,6 +59,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 .ei-header-logo img {
@@ -93,6 +94,10 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
+.ei-header-toggle i {
+  transition: transform 0.8s ease;
+}
+
 .ei-phone {
   font-weight: 700;
   color: #0f766e;
@@ -215,6 +220,7 @@ body {
   color: #1d4ed8;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
 }
 /* SEARCH SECTION */
 .ei-search-section {
@@ -303,12 +309,16 @@ body {
 /* ===== CARD CONTAINER ===== */
 .imep-card {
   display: grid;
-  grid-template-columns: 1.1fr 1.2fr 1.2fr 0.8fr;
+  /* grid-template-columns: 1.1fr 1.2fr 1.2fr 0.8fr; */
+  grid-template-columns: 1.1fr 1fr 1fr 1.4fr;
   background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid #e5e7eb;
   margin-bottom: 24px;
+}
+.imep-card.schedule-open {
+  grid-template-columns: 1.1fr 1fr 1fr 1.4fr;
 }
 /* COMMON COLUMN */
 .imep-col {
@@ -608,16 +618,13 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-
   background: #ffffff;
   border: 1px solid #d1d5db;
-  padding: 10px 14px;
+  padding: 9px 14px;
   border-radius: 8px;
-
   font-size: 14px;
   font-weight: 600;
   color: #0f766e;
-
   cursor: pointer;
   white-space: nowrap;
 }
@@ -629,6 +636,161 @@ body {
 
 .ei-use-location:hover {
   background: #f8fafc;
+}
+/* ================= SCHEDULE PICKER ================= */
+
+.ei-schedule-box {
+  display: none;
+  /* width: 100%; */
+}
+
+.imep-action.active .imep-cta {
+  display: none;
+}
+
+.imep-action.active .ei-schedule-box {
+  display: block;
+}
+
+/* Dates */
+.ei-schedule-dates {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ei-schedule-dates button {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  /* font-size: 13px; */
+  font-weight: 600;
+  cursor: pointer;
+}
+.ei-schedule-dates button:hover {
+  text-decoration: underline;
+}
+.ei-schedule-dates button.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+.ei-schedule-dates i {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Time slots */
+.ei-time-group {
+  display: grid;
+  grid-template-columns: 40px 1fr; /* label | slots */
+  column-gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ei-time-group span {
+  display: inline-block;
+  width: 36px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ei-time-group button {
+  margin: 4px 4px 0 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #e0cfcf87;
+  /* font-size: 13px; */
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.imep-nooffer {
+  font-weight: 500;
+  color: #64748b;
+}
+.ei-time-group button:hover {
+  background-color: #dcb5b5;
+}
+/* AM / PM */
+.ei-time-label {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 34px;
+  white-space: nowrap;
+}
+
+/* Slots container */
+.ei-time-slots {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* ================= ESPAÑOL POPUP ================= */
+
+.ei-lang-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 100;
+  display: none;
+}
+
+.ei-lang-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  padding: 24px 22px;
+  z-index: 101;
+  display: none;
+  text-align: center;
+}
+
+.ei-lang-modal h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.ei-lang-modal hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 16px 0;
+}
+
+.ei-lang-modal p {
+  font-size: 16px;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.ei-lang-modal a {
+  color: #1d4ed8;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.ei-lang-close {
+  margin-top: 18px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ei-lang-close:hover {
+  background: #0f766e;
 }
 @media (max-width: 1100px) {
   .ei-section {
@@ -677,8 +839,26 @@ body {
   #ei-hero h1 {
     font-size: 30px;
   }
+  .imep-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imep-card.schedule-open {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ei-time-group {
+    grid-template-columns: 30px 1fr;
+  }
+  .imep-basic {
+    border-bottom: 0.5px solid #e0cfcf87;
+  }
 }
 @media (max-width: 600px) {
+  .ei-lang-modal {
+    max-width: 285px;
+  }
+  .imep-action {
+    padding: 15px;
+  }
   .ei-search-box {
     align-items: stretch;
   }
@@ -728,6 +908,9 @@ body {
   .ei-hero-points {
     font-size: 14px;
     gap: 12px;
+  }
+  .imep-card.schedule-open {
+    grid-template-columns: 1fr;
   }
 }
 /* ================= SEARCH STICKY (DESKTOP ONLY) ================= */

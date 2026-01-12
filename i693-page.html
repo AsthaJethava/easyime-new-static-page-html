@@ -9,8 +9,8 @@
     <meta name="description"
         content="easyIME helps book your I‑693 medical exam with a USCIS certified surgeon. Secure process, online appointment, affordable cost, sealed envelope." />
     <link rel="icon" type="image/x-icon" href="/easyime_Images/favicon-96x96.png">
-    <link rel="stylesheet" href="./common.css?v=1.0" />
-    <link rel="stylesheet" href="./i693-page.css?v=1.0" />
+    <link rel="stylesheet" href="./common.css?v=2.0" />
+    <link rel="stylesheet" href="./i693-page.css?v=2.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -21,8 +21,9 @@
 
             <!-- LOGO -->
             <div class="ei-header-logo">
-                <img src="./easyime_Images/Logo.svg" alt="EasyIME Logo" />
-
+                <a href="#">
+                    <img src="./easyime_Images/Logo.svg" alt="EasyIME Logo" />
+                </a>
             </div>
 
             <!-- NAVIGATION -->
@@ -85,7 +86,7 @@
                 <strong>Los Angeles</strong>
             </nav>
 
-            <a href="#" class="ime-lang-switch">
+            <a class="ime-lang-switch">
                 <i class="fa-regular fa-message"></i> ¿Español?
             </a>
         </div>
@@ -101,7 +102,7 @@
             <div class="ei-search-box">
                 <div class="ei-search-box-mobile-div">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Enter your zip code or city" readonly id="eiSearchInput" />
+                    <input type="text" placeholder="Enter your zip code or city" id="eiSearchInput" />
                     <span class="ei-clear-input" id="eiClearSearch" title="Clear">
                         ✕
                     </span>
@@ -207,7 +208,40 @@
 
             <!-- CTA -->
             <div class="imep-col imep-action">
-                <button class="imep-cta">Schedule Appointment</button>
+                <button class="imep-cta js-open-schedule">Schedule Appointment</button>
+                <!-- Schedule Picker -->
+                <div class="ei-schedule-box">
+                    <div class="ei-schedule-dates">
+                        <button class="active">Tue, 13-Jan</button>
+                        <button>Wed, 14-Jan</button>
+                        <button>Thu, 15-Jan</button>
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="ei-schedule-times">
+                        <div class="ei-time-group">
+                            <div class="ei-time-label">AM :</div>
+                            <div class="ei-time-slots">
+                                <button>10:00-11:00</button>
+                                <button>11:00-12:00</button>
+                                <button>01:00-02:00</button>
+                                <button>02:00-03:00</button>
+                                <button>03:00-04:00</button>
+                                <button>04:00-05:00</button>
+                            </div>
+                        </div>
+
+                        <div class="ei-time-group">
+                            <div class="ei-time-label">PM :</div>
+                            <div class="ei-time-slots">
+                                <button>12:00-12:30</button>
+                                <button>01:00-02:00</button>
+                                <button>02:00-03:00</button>
+                                <button>03:00-04:00</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -261,13 +295,7 @@
                 <!-- <span class="imep-tag">Most Chosen</span> -->
 
                 <h4>All Inclusive</h4>
-                <div class="imep-inclusive-price">$449</div>
-
-                <ul class="imep-list imep-list-light">
-                    <li>Physical exam & Form completion</li>
-                    <li>Blood work</li>
-                    <li>All required vaccinations</li>
-                </ul>
+                <div class="imep-nooffer">Do not offer all inclusive package</div>
             </div>
 
             <!-- CTA -->
@@ -417,7 +445,7 @@
 
         <div class="ei-sheet-search">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search destinations" />
+            <input type="text" placeholder="Enter your zip code or city" />
         </div>
 
         <p class="ei-dropdown-title">Suggested locations</p>
@@ -447,30 +475,31 @@
                 <h2>What Is the I-693 Medical Exam?</h2>
                 <ul>
                     <li>The I-693 medical exam is a health evaluation required by USCIS as part of the
-                        U.S. immigration process. It ensures applicants meet</li>
-                    <li>easyIME helps applicants connect with USCIS-authorized civil surgeons and
-                        prepare for accurate exam completion.</li>
+                        U.S. immigration process. It ensures applicants meet immigration medical and vaccination
+                        requirements before their application is reviewed. </li>
+                    <li>easyIME supports this process by helping applicants connect with USCIS-authorized civil surgeons
+                        and prepare for accurate exam completion.</li>
                 </ul>
             </div>
             <div class="ei-i693-who-box">
-                <h2>Who Needs This Exam?</h2>
+                <h2>Who Needs the I‑693 Medical Exam ?</h2>
                 <ul>
-                    <li>Adjustment of Status (Green Card) applicants</li>
-                    <li>Family-based immigration applicants</li>
-                    <li>Applicants instructed to submit Form I-693</li>
+                    <li>Applicants applying for Adjustment of Status (Green Card)</li>
+                    <li>Family‑based immigration applicants</li>
+                    <li>Applicants instructed by USCIS to submit Form I‑693 </li>
                 </ul>
             </div>
 
             <div class="ei-i693-who-box">
                 <h2>Why Accuracy Matters</h2>
                 <ul>
-
                     <li>
-                        The I-693 must be completed correctly and sealed by a USCIS-certified civil surgeon.
-                        Missing information or vaccination errors can delay immigration processing.
+                        The I‑693 form must be completed correctly and sealed by a USCIS -certified surgeon. Missing
+                        information, incorrect vaccination records, or documentation errors can delay or impact
+                        immigration applications.
                     </li>
                     <li>
-                        easyIME focuses on preparation and clarity to reduce risks.
+                        easyIME focuses on preparation and clarity to help reduce these risks.
                     </li>
                 </ul>
             </div>
@@ -521,7 +550,7 @@
                 </div>
             </div>
             <div class="bannerimg">
-                <img src="./easyime_Images/medical_exam_process_banner.png" />
+                <img src="./easyime_Images/medicalprocess_banner.png" />
             </div>
         </div>
 
@@ -535,7 +564,7 @@
             <ul class="ei693-docs-list">
                 <li>
                     <span class="ei693-doc-dot"><i class="fa-solid fa-id-card"></i></span>
-                    Government-issued photo ID (passport or driver’s license)
+                    Government-issued photo ID (passport/driver license)
                 </li>
                 <li>
                     <span class="ei693-doc-dot"><i class="fa-solid fa-syringe"></i></span>
@@ -543,31 +572,29 @@
                 </li>
                 <li>
                     <span class="ei693-doc-dot"><i class="fa-solid fa-envelope"></i></span>
-                    Doctor appointment confirmation email
+                    Doctor appointment confirmation email copy
                 </li>
             </ul>
-
             <p class="ei693-docs-note">
                 Vaccination requirements follow USCIS guidelines. If vaccinations are missing,
                 they may be administered during the visit as required.
             </p>
-
         </div>
     </section>
 
     <section class="ei-i693-support-showcase">
         <h2>How easyIME Helps</h2>
         <p>
-            easyIME is a platform and process facilitator — not a medical provider.
+            easyIME acts as a platform and process facilitator, not a medical provider.
             All exams are performed by USCIS-authorized doctors.
         </p>
 
         <div class="ei-i693-chip-grid">
-            <span>Online Booking</span>
-            <span>Free Cancellation</span>
-            <span>Secure Data Handling</span>
-            <span>Multi-language Support</span>
+            <span>Online appointment booking</span>
+            <span>Free Cancellation options</span>
+            <span>Secure handling of personal information</span>
             <span>User-Friendly Experience</span>
+            <span>Multi-language Support</span>
             <span>Hassle-Free Process</span>
         </div>
     </section>
@@ -623,7 +650,7 @@
                 </div>
                 <div class="ei-faq-answer">
                     Applicants typically need a government‑issued photo ID, vaccination records, and any USCIS
-                    instructions related to Form I‑693
+                    instructions related to Form I‑693.
                 </div>
             </div>
             <div class="ei-faq-item">
@@ -675,7 +702,7 @@
     </section>
 
     <section class="blog-wrapper">
-        <h2 class="blog-heading">Blog / Resource Section </h2>
+        <h2 class="blog-heading">Blogs </h2>
 
         <div class="blog-grid">
 
@@ -742,8 +769,8 @@
                 <h4 class="ime-footer-title">Contact</h4>
                 <ul class="ime-footer-contact">
                     <li>support@easyime.com</li>
-                    <li><i class="fa fa-phone"></i> (203) 569-3999</li>
-                    <li><i class="fa-regular fa-message"></i> ¿Español?</li>
+                    <li style="color: #0f766e;"><i class="fa-solid fa-phone"></i> (203) 569-3999</li>
+                    <li><a class="ime-lang-switch"><i class="fa-regular fa-message"></i> ¿Español?</a></li>
                 </ul>
             </div>
 
@@ -760,10 +787,10 @@
             <div class="ime-footer-col">
                 <h4 class="ime-footer-title">Connect With Us</h4>
                 <ul class="ime-footer-social">
-                    <li><i class="fa-brands fa-youtube"></i> Follow us on YouTube</li>
-                    <li><i class="fa-brands fa-facebook"></i> Follow us on Facebook</li>
-                    <li><i class="fa-brands fa-twitter"></i> Follow us on Twitter</li>
-                    <li><i class="fa-brands fa-linkedin"></i> Follow us on LinkedIn</li>
+                    <li><i class="fa-brands fa-youtube" style="color: #ff0505;"></i> Follow us on YouTube</li>
+                    <li><i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Follow us on Facebook</li>
+                    <li><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i> Follow us on Twitter</li>
+                    <li><i class="fa-brands fa-linkedin" style="color: #0077B5 ;"></i> Follow us on LinkedIn</li>
                 </ul>
             </div>
 
@@ -780,18 +807,90 @@
         </div>
 
     </footer>
+    <!-- ================= ESPAÑOL POPUP ================= -->
+    <div class="ei-lang-backdrop" id="eiLangBackdrop"></div>
+
+    <div class="ei-lang-modal" id="eiLangModal">
+        <h3>
+            Encuentre un cirujano civil de USCIS<br>
+            para su examen médico de inmigración:
+        </h3>
+
+        <hr>
+
+        <p>
+            Envíe un mensaje de texto con<br>
+            su nombre y ciudad / código <br /> postal al <a href="tel:2035693999">(203) 569-3999</a>
+        </p>
+
+        <button class="ei-lang-close" id="eiLangClose">close</button>
+    </div>
+
     <div class="ei-sheet-backdrop" id="eiSheetBackdrop"></div>
+
+    <!-- For FAQ  -->
     <script>
         document.querySelectorAll('.ei-faq-question').forEach(q => {
             q.addEventListener('click', () => {
                 q.parentElement.classList.toggle('active');
             });
         });
+    </script>
+    <!-- For hamburger menu  -->
+    <script>
+        const toggleBtn = document.querySelector(".ei-header-toggle");
+        const toggleIcon = toggleBtn.querySelector("i");
+        const mobileMenu = document.querySelector(".ei-mobile-menu");
 
-        document.querySelector('.ei-header-toggle').addEventListener('click', () => {
-            document.querySelector('.ei-mobile-menu').classList.toggle('active');
+        function openMenu() {
+            mobileMenu.classList.add("active");
+            toggleIcon.classList.remove("fa-bars");
+            toggleIcon.classList.add("fa-xmark");
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove("active");
+            toggleIcon.classList.remove("fa-xmark");
+            toggleIcon.classList.add("fa-bars");
+        }
+
+        function isMenuOpen() {
+            return mobileMenu.classList.contains("active");
+        }
+
+        /* TOGGLE BUTTON CLICK */
+        toggleBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            isMenuOpen() ? closeMenu() : openMenu();
+        });
+
+        /* CLICK OUTSIDE TO CLOSE */
+        document.addEventListener("click", (e) => {
+            if (!isMenuOpen()) return;
+
+            const clickedInside =
+                e.target.closest(".ei-mobile-menu") ||
+                e.target.closest(".ei-header-toggle");
+
+            if (!clickedInside) {
+                closeMenu();
+            }
+        });
+
+        /* CLOSE ON SCROLL */
+        window.addEventListener("scroll", () => {
+            if (isMenuOpen()) {
+                closeMenu();
+            }
+        });
+
+        /* CLOSE WHEN MENU LINK CLICKED */
+        document.querySelectorAll(".ei-mobile-menu a").forEach(link => {
+            link.addEventListener("click", closeMenu);
         });
     </script>
+
+    <!-- For search Input  -->
     <script>
         const input = document.getElementById("eiSearchInput");
         const dropdown = document.getElementById("eiSearchDropdown");
@@ -883,6 +982,54 @@
         });
 
     </script>
+    <!-- For schedule button  -->
+    <script>
+        document.querySelectorAll(".js-open-schedule").forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                // Close all open schedules
+                document.querySelectorAll(".imep-action").forEach(col => {
+                    col.classList.remove("active");
+                });
+
+                // Open only this card's schedule
+                btn.closest(".imep-action").classList.add("active");
+            });
+        });
+        // document.querySelectorAll(".imep-cta").forEach(btn => {
+        //     btn.addEventListener("click", () => {
+        //         const card = btn.closest(".imep-card");
+
+        //         // Add only once — no toggle, no remove
+        //         card.classList.add("schedule-open");
+        //     });
+        // });
+    </script>
+    <!-- for ¿Español? popup -->
+    <script>
+        const langBtns = document.querySelectorAll(".ime-lang-switch");
+        const langModal = document.getElementById("eiLangModal");
+        const langBackdrop = document.getElementById("eiLangBackdrop");
+        const langClose = document.getElementById("eiLangClose");
+        function openLangModal(e) {
+            e.preventDefault();
+            langModal.style.display = "block";
+            langBackdrop.style.display = "block";
+            document.body.classList.add("ei-no-scroll");
+        }
+        function closeLangModal() {
+            langModal.style.display = "none";
+            langBackdrop.style.display = "none";
+            document.body.classList.remove("ei-no-scroll");
+        }
+        langBtns.forEach(btn => {
+            btn.addEventListener("click", openLangModal);
+        });
+
+        langClose.addEventListener("click", closeLangModal);
+        langBackdrop.addEventListener("click", closeLangModal);
+    </script>
+
 </body>
 
 </html>
