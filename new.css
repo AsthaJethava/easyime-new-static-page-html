@@ -731,8 +731,9 @@ body {
 
 .imep-rating {
   margin: 10px 0;
-  font-weight: 600;
-  color: #f59e0b;
+  font-size: 18px;
+  color: #ab0101;
+  font-weight: bold;
 }
 
 .imep-distance {
@@ -742,7 +743,7 @@ body {
 }
 
 .imep-verified {
-  font-size: 13px;
+  font-size: 14px;
   color: #0f766e;
   display: flex;
   gap: 10px;
