@@ -9,8 +9,8 @@
     <meta name="description"
         content="easyIME helps book your I‑693 medical exam with a USCIS certified surgeon. Secure process, online appointment, affordable cost, sealed envelope." />
     <link rel="icon" type="image/x-icon" href="/easyime_Images/favicon-96x96.png">
-    <link rel="stylesheet" href="./common.css?v=2.0" />
-    <link rel="stylesheet" href="./i693-page.css?v=2.0" />
+    <link rel="stylesheet" href="./common.css?v=1.0" />
+    <link rel="stylesheet" href="./i693-page.css?1=2.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -107,10 +107,10 @@
                         ✕
                     </span>
                 </div>
-                <button type="button" class="ei-use-location" id="eiUseLocationBtn">
+                <!-- <button type="button" class="ei-use-location" id="eiUseLocationBtn">
                     <i class="fa-solid fa-location-dot"></i>
                     Use My Location
-                </button>
+                </button> -->
                 <button class="ei-search-btn">Find USCIS Doctor Near Me</button>
             </div>
 
@@ -160,12 +160,12 @@
                     </div>
                 </div>
                 <div class="imep-rating">
-                    ⭐ 4.5
+                    <i class="fa-solid fa-star"></i> 4.5
                     <span class="imep-distance">Distance: 8.0 miles away</span>
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/verified.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -174,30 +174,33 @@
 
             <!-- BASIC PRICING -->
             <div class="imep-col imep-basic">
-                <div class="imep-price-row">
-                    <span>Adult</span>
-                    <strong>$299</strong>
-                </div>
+                <div class="imep-price-div">
+                    <div class="imep-price-row">
+                        <span>Adult</span>
+                        <strong>$299</strong>
+                    </div>
 
-                <div class="imep-price-row">
-                    <span>Child</span>
-                    <strong>$299</strong>
+                    <div class="imep-price-row">
+                        <span>Child</span>
+                        <strong>$299</strong>
+                    </div>
                 </div>
 
                 <p class="imep-includes-title">Includes only</p>
                 <ul class="imep-list">
                     <li>Physical exam & Form completion</li>
                     <li>Blood work</li>
-                    <li class="imep-muted">Vaccinations – Extra</li>
+                    <li>Vaccinations – Extra</li>
                 </ul>
             </div>
 
             <!-- ALL INCLUSIVE (HIGHLIGHT) -->
             <div class="imep-col imep-inclusive">
                 <!-- <span class="imep-tag">Most Chosen</span> -->
-
-                <h4>All Inclusive</h4>
-                <div class="imep-inclusive-price">$449</div>
+                <div class="ei-all-inclusive-div">
+                    <h4>All Inclusive</h4>
+                    <div class="imep-inclusive-price">$449</div>
+                </div>
 
                 <ul class="imep-list imep-list-light">
                     <li>Physical exam & Form completion</li>
@@ -304,148 +307,26 @@
             </div>
 
         </div>
-        <div class="imep-card">
-            <!-- PROFILE -->
-            <div class="imep-col imep-profile">
-                <div class="imep-profile-div">
-                    <div class="imep-avatar">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div>
-                        <h3 class="imep-name">Dr. Arash Lalezary</h3>
-                        <p class="imep-location">Bell, CA 90201</p>
-                    </div>
-                </div>
-                <div class="imep-rating">
-                    ⭐ 4.5
-                    <span class="imep-distance">Distance: 8.0 miles away</span>
-                </div>
-
-                <div class="imep-verified">
-                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
-                    <p>
-                        easyIME verified USCIS Civil Surgeon
-                    </p>
-                </div>
-            </div>
-
-            <!-- BASIC PRICING -->
-            <div class="imep-col imep-basic">
-                <div class="imep-price-row">
-                    <span>Adult</span>
-                    <strong>$299</strong>
-                </div>
-
-                <div class="imep-price-row">
-                    <span>Child</span>
-                    <strong>$299</strong>
-                </div>
-
-                <p class="imep-includes-title">Includes only</p>
-                <ul class="imep-list">
-                    <li>Physical exam & Form completion</li>
-                    <li>Blood work</li>
-                    <li class="imep-muted">Vaccinations – Extra</li>
-                </ul>
-            </div>
-
-            <!-- ALL INCLUSIVE (HIGHLIGHT) -->
-            <div class="imep-col imep-inclusive">
-                <!-- <span class="imep-tag">Most Chosen</span> -->
-
-                <h4>All Inclusive</h4>
-                <div class="imep-inclusive-price">$449</div>
-
-                <ul class="imep-list imep-list-light">
-                    <li>Physical exam & Form completion</li>
-                    <li>Blood work</li>
-                    <li>All required vaccinations</li>
-                </ul>
-            </div>
-
-            <!-- CTA -->
-            <div class="imep-col imep-action">
-                <button class="imep-cta">Schedule Appointment</button>
-            </div>
-
-        </div>
-        <div class="imep-card">
-            <!-- PROFILE -->
-            <div class="imep-col imep-profile">
-                <div class="imep-profile-div">
-                    <div class="imep-avatar">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div>
-                        <h3 class="imep-name">Dr. Arash Lalezary</h3>
-                        <p class="imep-location">Bell, CA 90201</p>
-                    </div>
-                </div>
-                <div class="imep-rating">
-                    ⭐ 4.5
-                    <span class="imep-distance">Distance: 8.0 miles away</span>
-                </div>
-
-                <div class="imep-verified">
-                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
-                    <p>
-                        easyIME verified USCIS Civil Surgeon
-                    </p>
-                </div>
-            </div>
-
-            <!-- BASIC PRICING -->
-            <div class="imep-col imep-basic">
-                <div class="imep-price-row">
-                    <span>Adult</span>
-                    <strong>$299</strong>
-                </div>
-
-                <div class="imep-price-row">
-                    <span>Child</span>
-                    <strong>$299</strong>
-                </div>
-
-                <p class="imep-includes-title">Includes only</p>
-                <ul class="imep-list">
-                    <li>Physical exam & Form completion</li>
-                    <li>Blood work</li>
-                    <li class="imep-muted">Vaccinations – Extra</li>
-                </ul>
-            </div>
-
-            <!-- ALL INCLUSIVE (HIGHLIGHT) -->
-            <div class="imep-col imep-inclusive">
-                <!-- <span class="imep-tag">Most Chosen</span> -->
-
-                <h4>All Inclusive</h4>
-                <div class="imep-inclusive-price">$449</div>
-
-                <ul class="imep-list imep-list-light">
-                    <li>Physical exam & Form completion</li>
-                    <li>Blood work</li>
-                    <li>All required vaccinations</li>
-                </ul>
-            </div>
-
-            <!-- CTA -->
-            <div class="imep-col imep-action">
-                <button class="imep-cta">Schedule Appointment</button>
-            </div>
-
-        </div>
     </section>
 
     <!-- MOBILE BOTTOM SHEET -->
     <div class="ei-mobile-sheet" id="eiMobileSheet">
-        <div class="ei-sheet-header">
-            <h3>Where?</h3>
-            <button id="eiCloseSheet">✕</button>
-        </div>
+        <!-- <div class="ei-sheet-header">
+            <h3>Schedule Your Appointment For Green Card Medical Exam</h3>
+            <button id="eiCloseSheet" class="ei-sheet-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div> -->
 
         <div class="ei-sheet-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Enter your zip code or city" />
+            <button class="ei-sheet-back" id="eiSheetBack">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            <input type="text" placeholder="Enter your zip code or city" id="eiSheetSearchInput" />
+            <button id="eiCloseSheet" class="ei-sheet-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
 
         <p class="ei-dropdown-title">Suggested locations</p>
@@ -466,7 +347,7 @@
             </div>
         </div>
 
-        <button class="ei-mobile-search-btn">Search</button>
+        <button class="ei-mobile-search-btn">Find USCIS Doctor</button>
     </div>
 
     <section class="ei-i693-eligibility-wrap">
@@ -899,8 +780,11 @@
         const searchSection = document.getElementById("eiSearchSection");
         const backdrop = document.getElementById("eiSheetBackdrop");
         const clearBtn = document.getElementById("eiClearSearch");
+        const sheetSearchInput = document.getElementById("eiSheetSearchInput");
+        const sheetBackBtn = document.getElementById("eiSheetBack");
+
         function closeMobileSheet() {
-            sheet.classList.remove("active");
+            sheet.classList.remove("active", "fullscreen");
             backdrop.classList.remove("active");
             document.body.classList.remove("ei-no-scroll");
         }
@@ -980,6 +864,15 @@
             input.value = "";
             clearBtn.style.display = "none";
         });
+        sheetSearchInput.addEventListener("focus", () => {
+            sheet.classList.add("fullscreen");
+        });
+        sheetBackBtn.addEventListener("click", () => {
+            sheet.classList.remove("active", "fullscreen");
+            backdrop.classList.remove("active");
+            document.body.classList.remove("ei-no-scroll");
+        });
+
 
     </script>
     <!-- For schedule button  -->

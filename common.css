@@ -347,6 +347,7 @@ body {
 }
 .imep-location {
   color: #64748b;
+  float: left;
 }
 .imep-rating {
   margin: 10px 0;
@@ -356,7 +357,7 @@ body {
 }
 .imep-distance {
   display: block;
-  font-size: 13px;
+  font-size: 17px;
   color: #64748b;
 }
 .imep-verified {
@@ -390,10 +391,13 @@ body {
   margin-top: 4px;
   padding-left: 18px;
 }
-.imep-muted {
-  color: #ef4444;
-}
 /* ===== ALL INCLUSIVE ===== */
+.ei-all-inclusive-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
 .imep-inclusive {
   /* background: linear-gradient(160deg, #0f766e, #0b4f4a); */
   /* color: white; */
@@ -405,11 +409,6 @@ body {
   margin-bottom: 6px;
 }
 
-.imep-inclusive-price {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
 .imep-inclusive-price {
   font-size: 30px;
   font-weight: 700;
@@ -433,14 +432,29 @@ body {
 /* MOBILE BOTTOM SHEET */
 .ei-mobile-sheet {
   position: fixed;
-  bottom: -100%;
   left: 0;
   width: 100%;
   background: #ffffff;
   border-radius: 20px 20px 0 0;
   padding: 20px;
   z-index: 40;
-  transition: bottom 0.35s ease;
+  height: 80vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: bottom 0.55s ease, height 0.5s ease;
+}
+/* ===== FULLSCREEN SEARCH MODE ===== */
+/* .ei-mobile-sheet.fullscreen {
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+} */
+.ei-sheet-close {
+  background: #0f766e;
+  padding: 5px 9px;
+  color: white;
+  border-radius: 10px;
+  border: none;
 }
 
 .ei-mobile-sheet.active {
@@ -450,15 +464,31 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  gap: 5px;
 }
 .ei-sheet-search {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   border: 1px solid #d1d5db;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 16px 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
 }
+.ei-sheet-search input {
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px; /* 🔑 prevents iOS zoom + clipping */
+  line-height: 1.4;
+  padding: 4px 0;
+}
+.ei-sheet-search input::placeholder {
+  color: #6b7280;
+}
+
 .ei-mobile-search-btn {
   margin-top: 20px;
   width: 100%;
@@ -548,7 +578,6 @@ body {
   align-items: center;
   gap: 10px;
   flex: 1;
-  /* min-width: 0; */
   position: relative;
 }
 /* ===== SEARCH CLEAR ICON ===== */
@@ -700,7 +729,7 @@ body {
 
 .ei-time-group button {
   margin: 4px 4px 0 0;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: 6px;
   background: #e0cfcf87;
   /* font-size: 13px; */
@@ -853,6 +882,49 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .imep-basic strong{
+    font-size: 16px;
+  }
+  .ei-search-box-mobile-div {
+    border: 1px solid #d1d5db;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .imep-price-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .imep-basic strong {
+    color: black;
+    font-weight: 500;
+  }
+  .imep-price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .imep-distance {
+    font-size: 14px;
+  }
+  .imep-verified,
+  .imep-list {
+    font-size: 12px;
+  }
+  .imep-col {
+    padding: 18px;
+  }
+  .imep-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .imep-profile-div {
+    flex-direction: row;
+  }
+  .ei-search-section {
+    padding-top: 15px;
+  }
   .ei-lang-modal {
     max-width: 285px;
   }
@@ -861,6 +933,8 @@ body {
   }
   .ei-search-box {
     align-items: stretch;
+    flex-direction: column;
+    padding: 20px 16px;
   }
   .ime-footer-main {
     grid-template-columns: 1fr;
@@ -874,6 +948,12 @@ body {
   }
   .imep-inclusive-price {
     font-size: 20px;
+    color: #16a34a;
+    margin-bottom: 0;
+  }
+  .imep-inclusive h4 {
+    margin-bottom: 0;
+    font-size: 18px;
   }
   .imep-includes-title {
     margin-top: 6px;
@@ -889,18 +969,17 @@ body {
     border-bottom: 0.25px solid #e0cfcf87;
   }
   .imep-profile {
-    padding: 10px 20px;
     text-align: center;
   }
   .imep-card {
     grid-template-columns: 1fr;
   }
-  .ei-search-box {
-    flex-direction: column;
+  .ime-page-context {
+    padding: 15px 10px;
   }
   .ime-page-context-top {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
   #ei-hero h1 {
     font-size: 28px;
@@ -947,4 +1026,19 @@ body {
 body.ei-no-scroll {
   overflow: hidden;
   touch-action: none;
+}
+/* ================= MOBILE SHEET BACK BUTTON ================= */
+.ei-sheet-back {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #0f766e;
+  cursor: pointer;
+}
+
+/* ================= FULLSCREEN MODE ================= */
+.ei-mobile-sheet.fullscreen {
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
 }
