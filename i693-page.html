@@ -57,6 +57,7 @@
             <a href="#">Home</a>
             <a href="#">FAQ</a>
             <a href="#">Contact</a>
+            <a href="#">SEARCH USCIS APPROVED DOCTORS</a>
         </div>
     </header>
 
@@ -100,6 +101,7 @@
         </p>
         <div class="ei-search-sticky" id="eiSearchSticky">
             <div class="ei-search-box">
+                <p class="search-doctor-line">SEARCH USCIS APPROVED DOCTORS</p>
                 <div class="ei-search-box-mobile-div">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Enter your zip code or city" id="eiSearchInput" />
@@ -107,10 +109,10 @@
                         ✕
                     </span>
                 </div>
-                <!-- <button type="button" class="ei-use-location" id="eiUseLocationBtn">
+                <button type="button" class="ei-use-location" id="eiUseLocationBtn">
                     <i class="fa-solid fa-location-dot"></i>
                     Use My Location
-                </button> -->
+                </button>
                 <button class="ei-search-btn">Find USCIS Doctor Near Me</button>
             </div>
 
@@ -261,12 +263,12 @@
                     </div>
                 </div>
                 <div class="imep-rating">
-                    ⭐ 4.5
+                    <i class="fa-solid fa-star"></i> 4.5
                     <span class="imep-distance">Distance: 8.0 miles away</span>
                 </div>
 
                 <div class="imep-verified">
-                    <img src="./easyime_Images/trusted.svg" alt="Trustable" />
+                    <img src="./easyime_Images/verified.svg" alt="Trustable" />
                     <p>
                         easyIME verified USCIS Civil Surgeon
                     </p>
@@ -275,35 +277,36 @@
 
             <!-- BASIC PRICING -->
             <div class="imep-col imep-basic">
-                <div class="imep-price-row">
-                    <span>Adult</span>
-                    <strong>$299</strong>
-                </div>
+                <div class="imep-price-div">
+                    <div class="imep-price-row">
+                        <span>Adult</span>
+                        <strong>$299</strong>
+                    </div>
 
-                <div class="imep-price-row">
-                    <span>Child</span>
-                    <strong>$299</strong>
+                    <div class="imep-price-row">
+                        <span>Child</span>
+                        <strong>$299</strong>
+                    </div>
                 </div>
 
                 <p class="imep-includes-title">Includes only</p>
                 <ul class="imep-list">
                     <li>Physical exam & Form completion</li>
                     <li>Blood work</li>
-                    <li class="imep-muted">Vaccinations – Extra</li>
+                    <li>Vaccinations – Extra</li>
                 </ul>
             </div>
 
             <!-- ALL INCLUSIVE (HIGHLIGHT) -->
             <div class="imep-col imep-inclusive">
                 <!-- <span class="imep-tag">Most Chosen</span> -->
-
                 <h4>All Inclusive</h4>
                 <div class="imep-nooffer">Do not offer all inclusive package</div>
             </div>
 
             <!-- CTA -->
             <div class="imep-col imep-action">
-                <button class="imep-cta">Schedule Appointment</button>
+                <button class="imep-cta js-open-schedule">Schedule Appointment</button>
             </div>
 
         </div>
@@ -317,7 +320,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div> -->
-
+        <p class="search-doctor-line in-search-input">SEARCH USCIS APPROVED DOCTORS</p>
         <div class="ei-sheet-search">
             <button class="ei-sheet-back" id="eiSheetBack">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -330,6 +333,12 @@
         </div>
 
         <p class="ei-dropdown-title">Suggested locations</p>
+        <div class="ei-dropdown-item ei-use-location-mobile" id="eiUseLocationMobile">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <strong>Use My Location</strong>
+            </div>
+        </div>
 
         <div class="ei-dropdown-item">
             <i class="fa-solid fa-location-dot"></i>
@@ -390,7 +399,7 @@
 
     <!-- PROCESS -->
     <section class="ei-section ei-wrap">
-        <h2 class="ei-title">I‑693 Medical Exam Process</h2>
+        <h2 class="ei-title" id="eiProcessTitle">I-693 Medical Exam Process</h2>
         <div class="banner-process-section">
 
             <div class="ei-process-timeline">
@@ -706,17 +715,77 @@
 
         <button class="ei-lang-close" id="eiLangClose">close</button>
     </div>
+    <!-- Scroll to Search Button -->
+    <button id="eiScrollToSearch" class="ei-scroll-top" aria-label="Back to search">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <div class="ei-sheet-backdrop" id="eiSheetBackdrop"></div>
+
+    <!-- For scroll to top button behaviour -->
+    <script>
+        const scrollTopBtn = document.getElementById("eiScrollToSearch");
+        const processTitle = document.getElementById("eiProcessTitle");
+
+        let hasReachedProcess = false;
+
+        // Always hidden on load
+        scrollTopBtn.style.display = "none";
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasReachedProcess) {
+                        hasReachedProcess = true;
+                        scrollTopBtn.style.display = "flex";
+                    }
+                });
+            },
+            {
+                root: null,
+                threshold: 0.1
+            }
+        );
+
+        observer.observe(processTitle);
+
+        // Hide again ONLY when user goes back to top
+        window.addEventListener("scroll", () => {
+            if (window.scrollY < 100) {
+                scrollTopBtn.style.display = "none";
+                hasReachedProcess = false; // optional reset
+            }
+        });
+
+        // Scroll to TOP
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 
     <!-- For FAQ  -->
     <script>
         document.querySelectorAll('.ei-faq-question').forEach(q => {
             q.addEventListener('click', () => {
-                q.parentElement.classList.toggle('active');
+                const item = q.parentElement;
+                const icon = q.querySelector('i');
+
+                item.classList.toggle('active');
+
+                if (item.classList.contains('active')) {
+                    icon.classList.remove('fa-angle-down');
+                    icon.classList.add('fa-angle-up');
+                } else {
+                    icon.classList.remove('fa-angle-up');
+                    icon.classList.add('fa-angle-down');
+                }
             });
         });
     </script>
+
     <!-- For hamburger menu  -->
     <script>
         const toggleBtn = document.querySelector(".ei-header-toggle");
@@ -787,12 +856,14 @@
             sheet.classList.remove("active", "fullscreen");
             backdrop.classList.remove("active");
             document.body.classList.remove("ei-no-scroll");
+            document.body.classList.remove("ei-popup-open"); // ✅ REMOVE
         }
         /* -----------------------------
            OPEN SEARCH
         ----------------------------- */
         input.addEventListener("click", () => {
             if (window.innerWidth <= 768) {
+                document.body.classList.add("ei-popup-open"); // ✅ ADD
                 sheet.classList.add("active");
                 backdrop.classList.add("active");
                 document.body.classList.add("ei-no-scroll");
@@ -867,12 +938,27 @@
         sheetSearchInput.addEventListener("focus", () => {
             sheet.classList.add("fullscreen");
         });
-        sheetBackBtn.addEventListener("click", () => {
-            sheet.classList.remove("active", "fullscreen");
-            backdrop.classList.remove("active");
-            document.body.classList.remove("ei-no-scroll");
+        sheetBackBtn.addEventListener("click", closeMobileSheet);
+
+        /* -----------------------------
+           MOBILE STICKY SEARCH (PAGE)
+        ----------------------------- */
+        let mobileSearchOffset = searchSection.offsetTop;
+
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth > 768) return;
+
+            if (window.scrollY > mobileSearchOffset) {
+                document.getElementById("eiSearchSticky").classList.add("mobile-fixed");
+            } else {
+                document.getElementById("eiSearchSticky").classList.remove("mobile-fixed");
+            }
         });
 
+        /* recalc on resize */
+        window.addEventListener("resize", () => {
+            mobileSearchOffset = searchSection.offsetTop;
+        });
 
     </script>
     <!-- For schedule button  -->

@@ -306,9 +306,51 @@
   height: auto;
   object-fit: contain;
 }
+/* ================= SCROLL TO SEARCH BUTTON ================= */
+.ei-scroll-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+  display: none;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+.ei-scroll-top i {
+  font-size: 20px;
+}
+.ei-scroll-top:hover {
+  transform: translateY(-3px);
+}
 
 @media (max-width: 768px) {
+  .ei-scroll-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
   .ei-i693-eligibility-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .ei693-docs-content h2 {
+    font-size: 24px;
+  }
+  .ei-title {
+    font-size: 26px;
+  }
+  .ei-i693-who-box h2 {
+    font-size: 20px;
   }
 }
