@@ -163,7 +163,7 @@
                 </div>
                 <div class="imep-rating">
                     <i class="fa-solid fa-star"></i> 4.5
-                    <span class="imep-distance">Distance: 8.0 miles away</span>
+                    <span class="imep-distance"> 8.0 miles away</span>
                 </div>
 
                 <div class="imep-verified">
@@ -264,7 +264,7 @@
                 </div>
                 <div class="imep-rating">
                     <i class="fa-solid fa-star"></i> 4.5
-                    <span class="imep-distance">Distance: 8.0 miles away</span>
+                    <span class="imep-distance"> 8.0 miles away</span>
                 </div>
 
                 <div class="imep-verified">
@@ -599,7 +599,7 @@
             <a href="https://www.easyime.com/blog/instructions-for-the-uscis-i693-form/" target="_blank"
                 class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/Instructions_for_the_USCIS_I-693 Form.jpg" alt="I-693 Instructions">
+                    <img src="./easyime_Images/Instructions for the USCIS i693 form.jpg" alt="I-693 Instructions">
                 </div>
                 <h3 class="blog-title">
                     Instructions for the USCIS I-693 Form
@@ -609,7 +609,7 @@
             <a href="https://www.easyime.com/blog/what-is-the-medical-exam-for-a-green-card/" target="_blank"
                 class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/Medical_Exam_for_a_Green_Card.webp" alt="Medical Exam">
+                    <img src="./easyime_Images/What is the medical exam for a green card.jpeg" alt="Medical Exam">
                 </div>
                 <h3 class="blog-title">
                     What Is the Medical Exam for a Green Card?
@@ -619,7 +619,8 @@
             <a href="https://www.easyime.com/blog/what-immigration-applicants-should-know-about-the-i-693-form/"
                 target="_blank" class="blog-item">
                 <div class="blog-thumb">
-                    <img src="./easyime_Images/Instructions_for_the_USCIS_I-693 Form.jpg" alt="Immigration Guide">
+                    <img src="./easyime_Images/What Immigration Applicants Should Know About the I-693 Form.jpg"
+                        alt="Immigration Guide">
                 </div>
                 <h3 class="blog-title">
                     What Immigration Applicants Should Know About the I-693 Form
@@ -715,6 +716,20 @@
 
         <button class="ei-lang-close" id="eiLangClose">close</button>
     </div>
+    <!-- Schedule Popup -->
+    <div class="ei-schedule-modal" id="eiScheduleModal">
+        <div class="ei-schedule-modal-content">
+            <button class="ei-schedule-close" id="eiScheduleClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="ei-schedule-title">Select Date & Time</h3>
+
+            <!-- Schedule box will be moved here dynamically -->
+            <div id="eiScheduleContainer"></div>
+        </div>
+    </div>
+
     <!-- Scroll to Search Button -->
     <button id="eiScrollToSearch" class="ei-scroll-top" aria-label="Back to search">
         <i class="fa-solid fa-arrow-up"></i>
@@ -963,27 +978,57 @@
     </script>
     <!-- For schedule button  -->
     <script>
+        const modal = document.getElementById("eiScheduleModal");
+        const modalContainer = document.getElementById("eiScheduleContainer");
+        const closeBtn = document.getElementById("eiScheduleClose");
+
+        let activeScheduleBox = null;
+        let originalParent = null;
+
         document.querySelectorAll(".js-open-schedule").forEach(btn => {
             btn.addEventListener("click", () => {
+                const actionCol = btn.closest(".imep-action");
+                const scheduleBox = actionCol.querySelector(".ei-schedule-box");
 
-                // Close all open schedules
-                document.querySelectorAll(".imep-action").forEach(col => {
-                    col.classList.remove("active");
-                });
+                if (!scheduleBox) return;
 
-                // Open only this card's schedule
-                btn.closest(".imep-action").classList.add("active");
+                // Save original location
+                activeScheduleBox = scheduleBox;
+                originalParent = actionCol;
+
+                // Move schedule box into popup
+                modalContainer.appendChild(scheduleBox);
+                scheduleBox.style.display = "block";
+
+                // Show modal
+                modal.classList.add("active");
+                document.body.classList.add("ei-no-scroll");
             });
         });
-        // document.querySelectorAll(".imep-cta").forEach(btn => {
-        //     btn.addEventListener("click", () => {
-        //         const card = btn.closest(".imep-card");
 
-        //         // Add only once — no toggle, no remove
-        //         card.classList.add("schedule-open");
-        //     });
-        // });
+        function closeScheduleModal() {
+            if (activeScheduleBox && originalParent) {
+                activeScheduleBox.style.display = "none";
+                originalParent.appendChild(activeScheduleBox);
+            }
+
+            modal.classList.remove("active");
+            document.body.classList.remove("ei-no-scroll");
+
+            activeScheduleBox = null;
+            originalParent = null;
+        }
+
+        closeBtn.addEventListener("click", closeScheduleModal);
+
+        // Click outside to close
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeScheduleModal();
+            }
+        });
     </script>
+
     <!-- for ¿Español? popup -->
     <script>
         const langBtns = document.querySelectorAll(".ime-lang-switch");
