@@ -110,23 +110,6 @@
   font-size: 30px;
   margin-bottom: 12px;
 }
-
-.ei-i693-chip-grid {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-}
-
-.ei-i693-chip-grid span {
-  background: #0f766e;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 14px;
-}
 /* ===== Documents: Editorial Layout ===== */
 .ei693-docs-editorial {
   background: #ffffff;
@@ -331,6 +314,29 @@
 .ei-scroll-top:hover {
   transform: translateY(-3px);
 }
+.ei-help-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.ei-help-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.ei-help-item i {
+  font-size: 20px;
+  color: #0f766e;
+}
 
 @media (max-width: 768px) {
   .ei-scroll-top {
@@ -344,6 +350,12 @@
   }
 }
 @media (max-width: 600px) {
+  .ei-help-grid {
+    grid-template-columns: none;
+  }
+  .ei-help-item {
+    font-size: 14px;
+  }
   .ei693-docs-content h2 {
     font-size: 24px;
   }
@@ -352,5 +364,15 @@
   }
   .ei-i693-who-box h2 {
     font-size: 20px;
+  }
+  .ei-i693-support-showcase,
+  .ei693-docs-editorial{
+    padding-bottom: 45px;
+  }
+  .blog-wrapper{
+    margin-top: 20px;
+  }
+  .blog-heading{
+    margin-bottom: 20px;
   }
 }
